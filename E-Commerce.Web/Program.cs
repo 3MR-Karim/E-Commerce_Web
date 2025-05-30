@@ -1,4 +1,9 @@
 
+using DomainLayer.Contracts;
+using Microsoft.EntityFrameworkCore;
+using Persistence.Data;
+using Persistence.DataSeeding;
+
 namespace E_Commerce.Web
 {
     public class Program
@@ -13,9 +18,22 @@ namespace E_Commerce.Web
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<storeDbContext>(options =>
+            {
+
+                options.UseSqlServer(builder.Configuration.GetConnectionString("storeDbContext"));
+
+            });
+            builder.Services.AddScoped<IDataSeeding, DataSeeding>();
+            
 
             var app = builder.Build();
+         using  var scoope=  app.Services.CreateScope();
 
+          var objectDataSeeding=  scoope.ServiceProvider.GetRequiredService<IDataSeeding>();// take typer service and return servcie
+                                                                                            //return serive that sked form data Seeding  
+
+            objectDataSeeding.DataSeed();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
