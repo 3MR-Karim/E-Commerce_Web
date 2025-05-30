@@ -12,7 +12,7 @@ namespace DomainLayer.Contracts
         // function read data from psoiton and enter for database OK do you return can reutn on case OK 
 
 
-        void DataSeed();
+       Task DataSeedAsync();
 
     }
 }
