@@ -33,7 +33,7 @@ namespace E_Commerce.Web
           var objectDataSeeding=  scoope.ServiceProvider.GetRequiredService<IDataSeeding>();// take typer service and return servcie
                                                                                             //return serive that sked form data Seeding  
 
-            objectDataSeeding.DataSeed();
+            objectDataSeeding.DataSeedAsync();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
