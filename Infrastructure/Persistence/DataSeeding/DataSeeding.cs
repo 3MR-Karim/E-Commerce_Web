@@ -27,7 +27,7 @@ namespace Persistence.DataSeeding
                 // Seed ProductBrands
                 if (!_storeDbContext.Set<ProductBrand>().Any())
                 {
-                    var productbrandData = File.OpenRead(@"../Infrastructure/Persistence/Data/DataSeed/brands.json");
+                    var productbrandData = File.OpenRead(@"..\Infrastructure\Persistence\Data\DataSeed\brands.json");
                     var productBrands = await JsonSerializer.DeserializeAsync<List<ProductBrand>>(productbrandData);
 
                     if (productBrands is not null && productBrands.Any())

@@ -3,6 +3,7 @@ using DomainLayer.Contracts;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Data;
 using Persistence.DataSeeding;
+using Persistence.Repository;
 
 namespace E_Commerce.Web
 {
@@ -25,7 +26,7 @@ namespace E_Commerce.Web
 
             });
             builder.Services.AddScoped<IDataSeeding, DataSeeding>();
-            
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var app = builder.Build();
          using  var scoope=  app.Services.CreateScope();

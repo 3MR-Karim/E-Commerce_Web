@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repository
 {
-    internal class UnitOfWork(storeDbContext dbContext) : IUnitOfWork
+    public class UnitOfWork(storeDbContext dbContext) : IUnitOfWork
     {
         private readonly storeDbContext _dbContext = dbContext;
         private readonly Dictionary<string, object> _repositories = new();
