@@ -20,6 +20,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presention", "Infrastructure\Presention\Presention.csproj", "{C0413855-71EE-4DC8-8439-2427F3DBC530}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{B0BF792D-0CCB-436F-842F-7BC01C8781C3}"
+	ProjectSection(SolutionItems) = preProject
+		Infrastructure\Presention\Controllers\ProductController.cs = Infrastructure\Presention\Controllers\ProductController.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
